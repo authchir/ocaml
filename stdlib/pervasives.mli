@@ -612,9 +612,7 @@ val bool_of_string : string -> bool
    ["true"] or ["false"]. *)
 
 val bool_of_string_opt: string -> bool option
-(** Convert the given string to a boolean.
-    Return [None] if the string is not
-    ["true"] or ["false"].
+(** Same as [bool_of_string], but returns [None] instead of raising..
     @since 4.05
 *)
 
@@ -777,7 +775,7 @@ val read_int : unit -> int
    if the line read is not a valid representation of an integer. *)
 
 val read_int_opt: unit -> int option
-(** Same as [read_int_opt], but returns [None] instead of raising.
+(** Same as [read_int], but returns [None] instead of raising.
     @since 4.05
 *)
 
@@ -788,9 +786,8 @@ val read_float : unit -> float
    representation of a floating-point number. *)
 
 val read_float_opt: unit -> float option
-(** Flush standard output, then read one line from standard input
-    and convert it to a floating-point number.
-    Returns [None] if the line read is not a valid
+(** Same as [read_float], but returns [None] instead of returning
+    unspecified result if the line read is not a valid
     representation of a floating-point number.
     @since 4.05.0 *)
 
